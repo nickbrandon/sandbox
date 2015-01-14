@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace MvcApplication1.Models
+{
+    public class AboutModel
+    {
+        public string Name { get; set; }
+        public string Location { get; set; }
+    }
+}
