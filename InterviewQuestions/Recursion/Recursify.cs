@@ -29,7 +29,7 @@ namespace Recursion
             //Console.WriteLine(total);
             //Console.WriteLine(count);
 
-            Console.WriteLine(Fib(18));
+            Console.WriteLine(Fib(8));
             Console.WriteLine(c);
         }
 
@@ -55,8 +55,10 @@ namespace Recursion
         static long Fib(int n)
         {
             c++;
-            if (_dictionary.ContainsKey(n))
-                return _dictionary[n];
+            long value;
+            //added TryGetValue in place of ContainsKey
+            if (_dictionary.TryGetValue(n, out value))
+                return value;
             long fibCatcher;
             if (n == 0)
             {
@@ -73,6 +75,13 @@ namespace Recursion
             
         _dictionary.Add(n, fibCatcher);
             return fibCatcher;
+        }
+
+        public bool TryGetValue(int key, out long value, out long value1)
+        {
+            value = 10;
+            value1 = 10;
+            return true;
         }
     }
 }

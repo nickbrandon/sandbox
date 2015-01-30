@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardShuffler", "CardShuffle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NestedLoops", "NestedLoops\NestedLoops.csproj", "{030DEDF8-757A-4457-8A92-A52E789049AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookReview", "BookReview\BookReview.csproj", "{48C2ADD4-7ADD-48B5-9053-3B27CCE77246}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookReview", "..\BookReview\BookReview.csproj", "{3D161C9E-2443-4B0E-A88D-515B774E446E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{030DEDF8-757A-4457-8A92-A52E789049AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{030DEDF8-757A-4457-8A92-A52E789049AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{030DEDF8-757A-4457-8A92-A52E789049AF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{48C2ADD4-7ADD-48B5-9053-3B27CCE77246}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{48C2ADD4-7ADD-48B5-9053-3B27CCE77246}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{48C2ADD4-7ADD-48B5-9053-3B27CCE77246}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{48C2ADD4-7ADD-48B5-9053-3B27CCE77246}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D161C9E-2443-4B0E-A88D-515B774E446E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D161C9E-2443-4B0E-A88D-515B774E446E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D161C9E-2443-4B0E-A88D-515B774E446E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D161C9E-2443-4B0E-A88D-515B774E446E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

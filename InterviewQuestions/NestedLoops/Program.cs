@@ -40,7 +40,7 @@ namespace NestedLoops
                     sum += item.Quantity;
                 }
                 //linq to do the above foreach loop
-                //sum += o.Items.Sum(item => item.Quantity);
+                sum += o.Items.Sum(item => item.Quantity);
             }
 
             
