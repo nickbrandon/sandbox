@@ -9,69 +9,6 @@ namespace SortingExcercise
         void Sort(int[] whateves);
     }
 
-    public class ArraySort : ISortingExcercise
-    {
-        public void Sort(int[] ints)
-        {
-            Array.Sort(ints);
-            string[] intsToStrings = ints.Select(x => x.ToString()).ToArray();
-
-            File.WriteAllLines("c:\\users\\nbrandon\\Desktop\\sortedInts.txt", intsToStrings);
-        }
-    }
-
-    public class InsertionSort : ISortingExcercise
-    {
-        public void Sort(int[] ints)
-        {
-            //start with result as first element of input
-
-            //loop over the input until empty, "removing" the first remaining element
-
-            //compare removed element against current result, starting from the highest (rightmost) element and working left towards the lowest element
-
-            //if the removed input element is lower that the current result element, copy that value into the following element to make room for the
-            //new element below, and repeat with the next lowest element
-
-            //otherwise the new element is in the correct location; save it in the cell left by copying the last examined result up, and start again from
-            //(2) with the next element
-
-            Console.WriteLine("Insertion Sort");
-        }
-    }
-
-    public class MergeSort : ISortingExcercise
-    {
-        public void Sort(int[] ints)
-        {
-            Console.WriteLine("Merge Sort");   
-        }
-    }
-
-    public class SelectionSort : ISortingExcercise
-    {
-        public void Sort(int[] ints)
-        {
-            Console.WriteLine("Selection Sort");
-        }
-    }
-
-    public class QuickSort : ISortingExcercise
-    {
-        public void Sort(int[] ints)
-        {
-            Console.WriteLine("Quick Sort");
-        }
-    }
-
-    public class CountingSort : ISortingExcercise
-    {
-        public void Sort(int[] ints)
-        {
-            Console.WriteLine("Counting Sort");
-        }
-    }
-
     internal class SortingService
     {
         private readonly ISortingExcercise _sortingExcercise;
@@ -106,7 +43,7 @@ namespace SortingExcercise
             int.TryParse(Console.ReadLine(), out userChoice);
 
             string[] lines = File.ReadAllLines(args[0]);
-            int[] ints = lines.Select(x => int.Parse(x)).ToArray();
+            int[] ints = lines.Select(int.Parse).ToArray();
 
 
             switch (userChoice)
