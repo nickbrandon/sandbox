@@ -8,10 +8,6 @@ namespace SortingExcercise.Sorts
         {
             Array.Sort(ints);
             return ints;
-            
-            //string[] intsToStrings = ints.Select(x => x.ToString()).ToArray();
-
-            //return intsToStrings.Select(int.Parse).ToArray();
         }
     }
 }

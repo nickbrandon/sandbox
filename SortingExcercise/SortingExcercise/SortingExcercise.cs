@@ -52,8 +52,7 @@ namespace SortingExcercise
                 case 1:
                     var arraySort = new ArraySort(); 
                     arraySort.Sort(ints);
-                    string[] stringInts = ints.Select(x => x.ToString()).ToArray();
-                    File.WriteAllLines("c:\\users\\nbrandon\\Desktop\\sortedInts.txt", stringInts);
+                    SaveValues(ints);
                     break;
                 case 2:
                     var insertionSort = new InsertionSort();
@@ -76,6 +75,12 @@ namespace SortingExcercise
                     countingSort.Sort(ints);
                     break;
             }
+        }
+
+        private static void SaveValues(int[] ints)
+        {
+            string[] stringInts = ints.Select(x => x.ToString()).ToArray();
+            File.WriteAllLines("c:\\users\\nbrandon\\Desktop\\sortedInts.txt", stringInts);
         }
     }
 }
