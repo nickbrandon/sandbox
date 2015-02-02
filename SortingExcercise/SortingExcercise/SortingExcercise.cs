@@ -1,65 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
 namespace SortingExcercise
 {
-    internal class SortingExcercise
+    internal interface ISortingExcercise
     {
-        private static void Main(string[] args)
+        void Sort(int[] whateves);
+    }
+
+    public class ArraySort : ISortingExcercise
+    {
+        public void Sort(int[] ints)
         {
-            Console.WriteLine("********* Choose your sort option below: *********" );
-            Console.WriteLine("1) Array.Sort" );
-            Console.WriteLine("2) Insertion Sort" );
-            Console.WriteLine("3) Merge Sort" );
-            Console.WriteLine("4) Selection Sort" );
-            Console.WriteLine("5) Quick Sort" );
-            Console.WriteLine("6) Counting Sort" );
-            Console.WriteLine();
-
-            Console.Write("Enter option: ");
-
-            int userChoice;
-                int.TryParse(Console.ReadLine(), out userChoice);
-            
-            var lines = File.ReadAllLines(args[0]);
-
-            switch (userChoice)
-            {
-                case 1:
-                    ArraySort(lines);
-                    break;
-                case 2:
-                    InsertionSort(lines);
-                    break;
-                case 3:
-                    MergeSort(lines);
-                    break;
-                case 4:
-                    SelectionSort(lines);
-                    break;
-                case 5:
-                    QuickSort(lines);
-                    break;
-                case 6:
-                    CountingSort(lines);
-                    break;
-            }
-
-        }
-
-        public static void ArraySort(string[] strings)
-        {
-            var stringsToInts = strings.Select(x => int.Parse(x)).ToArray();
-            Array.Sort(stringsToInts);
-            string[] intsToStrings = stringsToInts.Select(x => x.ToString()).ToArray();
-
+            Array.Sort(ints);
+            string[] intsToStrings = ints.Select(x => x.ToString()).ToArray();
 
             File.WriteAllLines("c:\\users\\nbrandon\\Desktop\\sortedInts.txt", intsToStrings);
         }
+    }
 
-        public static void InsertionSort(string[] strings)
+    public class InsertionSort : ISortingExcercise
+    {
+        public void Sort(int[] ints)
         {
             //start with result as first element of input
 
@@ -75,26 +38,104 @@ namespace SortingExcercise
 
             Console.WriteLine("Insertion Sort");
         }
+    }
 
-        public static void MergeSort(string[] strings)
+    public class MergeSort : ISortingExcercise
+    {
+        public void Sort(int[] ints)
         {
-            Console.WriteLine("Insertion Sort");
+            Console.WriteLine("Merge Sort");   
         }
+    }
 
-        public static void SelectionSort(string[] strings)
+    public class SelectionSort : ISortingExcercise
+    {
+        public void Sort(int[] ints)
         {
             Console.WriteLine("Selection Sort");
         }
+    }
 
-        public static void QuickSort(string[] strings)
+    public class QuickSort : ISortingExcercise
+    {
+        public void Sort(int[] ints)
         {
             Console.WriteLine("Quick Sort");
         }
+    }
 
-        public static void CountingSort(string[] strings)
+    public class CountingSort : ISortingExcercise
+    {
+        public void Sort(int[] ints)
         {
             Console.WriteLine("Counting Sort");
         }
+    }
 
+    internal class SortingService
+    {
+        private readonly ISortingExcercise _sortingExcercise;
+
+        public SortingService(ISortingExcercise sortingExcercise)
+        {
+            _sortingExcercise = sortingExcercise;
+        }
+
+        public void Sort(int[] ints)
+        {
+            _sortingExcercise.Sort(ints);
+        }
+    }
+
+    internal class SortingExcercise
+    {
+        private static void Main(string[] args)
+        {
+            Console.WriteLine("********* Choose your sort option below: *********");
+            Console.WriteLine("1) Array.Sort");
+            Console.WriteLine("2) Insertion Sort");
+            Console.WriteLine("3) Merge Sort");
+            Console.WriteLine("4) Selection Sort");
+            Console.WriteLine("5) Quick Sort");
+            Console.WriteLine("6) Counting Sort");
+            Console.WriteLine();
+
+            Console.Write("Enter option: ");
+
+            int userChoice;
+            int.TryParse(Console.ReadLine(), out userChoice);
+
+            string[] lines = File.ReadAllLines(args[0]);
+            int[] ints = lines.Select(x => int.Parse(x)).ToArray();
+
+
+            switch (userChoice)
+            {
+                case 1:
+                    var arraySort = new ArraySort(); 
+                    arraySort.Sort(ints);
+                    break;
+                case 2:
+                    var insertionSort = new InsertionSort();
+                    insertionSort.Sort(ints);
+                    break;
+                case 3:
+                    var mergeSort = new MergeSort();
+                    mergeSort.Sort(ints);
+                    break;
+                case 4:
+                    var selectionSort = new SelectionSort();
+                    selectionSort.Sort(ints);
+                    break;
+                case 5:
+                    var quickSort = new QuickSort();
+                    quickSort.Sort(ints);
+                    break;
+                case 6:
+                    var countingSort = new CountingSort();
+                    countingSort.Sort(ints);
+                    break;
+            }
+        }
     }
 }
