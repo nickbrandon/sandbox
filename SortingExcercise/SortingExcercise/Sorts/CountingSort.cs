@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace SortingExcercise
 {
-    public class MergeSort : ISortingExcercise
+
+    public class CountingSort : ISortingExcercise
     {
-        public void Sort(int[] ints)
+        public int[] Sort(int[] ints)
         {
-            Console.WriteLine("Merge Sort");
+            Console.WriteLine("Counting Sort");
+            return null;
         }
     }
+
 }

@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SortingExcercise
+namespace SortingExcercise.Sorts
 {
     public class InsertionSort : ISortingExcercise
     {
-        public void Sort(int[] ints)
+        public int[] Sort(int[] ints)
         {
             //start with result as first element of input
 
@@ -23,6 +19,7 @@ namespace SortingExcercise
             //(2) with the next element
 
             Console.WriteLine("Insertion Sort");
+            return null;
         }
     }
 

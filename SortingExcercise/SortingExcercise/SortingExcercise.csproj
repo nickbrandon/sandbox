@@ -41,7 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArraySort.cs" />
+    <Compile Include="Sorts\ArraySort.cs" />
+    <Compile Include="Sorts\CountingSort.cs" />
+    <Compile Include="Sorts\InsertionSort.cs" />
+    <Compile Include="Sorts\MergeSort.cs" />
+    <Compile Include="Sorts\QuickSort.cs" />
+    <Compile Include="Sorts\SelectionSort.cs" />
     <Compile Include="SortingExcercise.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

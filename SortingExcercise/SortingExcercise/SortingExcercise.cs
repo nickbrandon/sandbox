@@ -1,12 +1,13 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using SortingExcercise.Sorts;
 
 namespace SortingExcercise
 {
     internal interface ISortingExcercise
     {
-        void Sort(int[] whateves);
+        int[] Sort(int[] ints);
     }
 
     internal class SortingService
@@ -51,6 +52,8 @@ namespace SortingExcercise
                 case 1:
                     var arraySort = new ArraySort(); 
                     arraySort.Sort(ints);
+                    string[] stringInts = ints.Select(x => x.ToString()).ToArray();
+                    File.WriteAllLines("c:\\users\\nbrandon\\Desktop\\sortedInts.txt", stringInts);
                     break;
                 case 2:
                     var insertionSort = new InsertionSort();
