@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization.Formatters;
 
 namespace SortingExcercise.Sorts
 {
@@ -10,14 +9,14 @@ namespace SortingExcercise.Sorts
         public int[] Sort(int[] ints)
         {
             //convert ints[] to List
-            var listOfInts = ints.ToList();
-            
-            
+            List<int> listOfInts = ints.ToList();
+
+
             //3 arrays for holding values
             var result = new List<int>();
             var left = new List<int>();
             var right = new List<int>();
-            
+
             if (listOfInts.Count <= 1)
             {
                 return ints;
@@ -28,26 +27,23 @@ namespace SortingExcercise.Sorts
             {
                 left.Add(listOfInts[i]);
             }
-            for (int i = 0; i < ints.Count(); i++)
+            for (int i = midpoint; i < listOfInts.Count(); i++)
             {
                 right.Add(listOfInts[i]);
             }
 
             int[] leftArray = left.ToArray();
+            left = Sort(leftArray).ToList();
 
-
-            //can I recursively call this function if I'm doing a list conversion?
-
-            left = Sort(leftArray);
-            
-            //right = Sort(right);
-            //result = Merge(left, right);
+            int[] rightArray = right.ToArray();
+            right = Sort(rightArray).ToList();
+            result = Merge(left, right).ToList();
 
 
             Console.WriteLine("Merge Sort");
-            return null;
-        }
 
+            return result.ToArray();
+        }
 
 
         private List<int> Merge(object left, object right)
@@ -56,7 +52,6 @@ namespace SortingExcercise.Sorts
         }
     }
 }
-
 
 // take in unordered array
 // divide it in 2 until there are n sets of 2 elements (an odd element can be in its own set)
