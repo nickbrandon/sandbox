@@ -53,6 +53,8 @@ namespace SortingExcercise.Sorts
     }
 }
 
+
+//based on : http://codereview.stackexchange.com/questions/30545/merge-sort-implementation
 // take in unordered array
 // divide it in 2 until there are n sets of 2 elements (an odd element can be in its own set)
 // take each set(n) and do a compare, swapping the values if necessary
