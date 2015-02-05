@@ -68,8 +68,6 @@ namespace SortingExcercise.Sorts
                 right.RemoveAt(0);
             }
 
-            //why is this returning correctly here but not when I pass it back to the MergeSort function that calls it?
-
             foreach (var result in results)
             {
                 Console.WriteLine(result);

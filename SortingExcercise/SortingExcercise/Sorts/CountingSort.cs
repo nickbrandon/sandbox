@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Linq;
 
 namespace SortingExcercise.Sorts
@@ -24,7 +25,7 @@ namespace SortingExcercise.Sorts
                 counts[ints[i]]++; // the position in the count array of ints[i] incremented
             }
 
-            int j = 0;
+            int j = 0;  //initialize another counter
 
 
             for (int i = 0; i < counts.Length; i++)

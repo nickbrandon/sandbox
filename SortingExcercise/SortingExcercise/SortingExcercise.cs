@@ -61,8 +61,8 @@ namespace SortingExcercise
                     break;
                 case 3:
                     var mergeSort = new MergeSort();
-                    mergeSort.Sort(ints);
-                    SaveValues(ints);
+                    var sortedInts = mergeSort.Sort(ints);
+                    SaveValues(sortedInts);
                     break;
                 case 4:
                     var selectionSort = new SelectionSort();

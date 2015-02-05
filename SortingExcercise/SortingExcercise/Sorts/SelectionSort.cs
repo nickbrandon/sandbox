@@ -1,4 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace SortingExcercise.Sorts
 {
@@ -6,6 +9,32 @@ namespace SortingExcercise.Sorts
     {
         public int[] Sort(int[] ints)
         {
+            for (int i = 0; i < ints.Length - 1; i++)
+            {
+                var iMin = i;
+                for (int j = i + 1; j < ints.Length; j++)
+                {
+                    if (ints[j] < ints[iMin])
+                    {
+                        iMin = j;
+                    }
+                    if (iMin != i)
+                    {
+                        var tmp = ints[i];
+                        ints[i] = ints[iMin];
+                        ints[iMin] = tmp;
+                    }
+                }
+            }
+
+            
+
+            foreach (var i in ints)
+            {
+                Console.WriteLine(i);
+            }
+
+
             Console.WriteLine("Selection Sort");
             return null;
         }
