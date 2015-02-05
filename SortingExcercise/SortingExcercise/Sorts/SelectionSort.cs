@@ -28,15 +28,7 @@ namespace SortingExcercise.Sorts
             }
 
             
-
-            foreach (var i in ints)
-            {
-                Console.WriteLine(i);
-            }
-
-
-            Console.WriteLine("Selection Sort");
-            return null;
+            return ints;
         }
     }
 

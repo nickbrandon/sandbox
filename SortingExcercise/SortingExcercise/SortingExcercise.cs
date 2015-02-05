@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using SortingExcercise.Sorts;
 
 namespace SortingExcercise
@@ -67,10 +69,12 @@ namespace SortingExcercise
                 case 4:
                     var selectionSort = new SelectionSort();
                     selectionSort.Sort(ints);
+                    SaveValues(ints);
                     break;
                 case 5:
                     var quickSort = new QuickSort();
                     quickSort.Sort(ints);
+                    SaveValues(ints);
                     break;
                 case 6:
                     var countingSort = new CountingSort();
@@ -81,8 +85,9 @@ namespace SortingExcercise
 
         private static void SaveValues(int[] ints)
         {
+            var fileName = "c:\\users\\nbrandon\\Desktop\\sortedInts.txt";
             string[] stringInts = ints.Select(x => x.ToString()).ToArray();
-            File.WriteAllLines("c:\\users\\nbrandon\\Desktop\\sortedInts.txt", stringInts);
+            File.WriteAllLines(fileName, stringInts);
         }
     }
 }

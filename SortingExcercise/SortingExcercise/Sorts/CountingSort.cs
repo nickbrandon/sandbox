@@ -9,7 +9,7 @@ namespace SortingExcercise.Sorts
     {
         public int[] Sort(int[] ints)
         {
-            var testArray = new int[] {11, 34, 5, 2, 13, 8, 9, 10};
+            var testArray = new int[] {-11, 34, 5, 2, 13, 8, 9, 10};
             CountingSorter(testArray);
             Console.WriteLine("Counting Sort");
             return null;
@@ -22,7 +22,7 @@ namespace SortingExcercise.Sorts
 
             for (int i = 0; i < ints.Length; i++)  //
             {
-                counts[ints[i]]++; // the position in the count array of ints[i] incremented
+                counts[ints[i]]++; // the position in the count array of ints[i] 
             }
 
             int j = 0;  //initialize another counter
