@@ -8,12 +8,8 @@ namespace SortingExcercise.Sorts
     {
         public int[] Sort(int[] ints)
         {
-            //convert ints[] to List
             List<int> listOfInts = ints.ToList();
 
-
-            //3 arrays for holding values
-            var result = new List<int>();
             var left = new List<int>();
             var right = new List<int>();
 
@@ -37,24 +33,49 @@ namespace SortingExcercise.Sorts
 
             int[] rightArray = right.ToArray();
             right = Sort(rightArray).ToList();
-            result = Merge(left, right).ToList();
 
-
-            Console.WriteLine("Merge Sort");
-
-            return result.ToArray();
+            return Merge(left, right).ToArray();
+            
         }
 
-
-        private List<int> Merge(object left, object right)
+        private IEnumerable<int> Merge(List<int> left, List<int> right)
         {
-            throw new NotImplementedException();
+            var results = new List<int>();
+
+            while (left.Count > 0 && right.Count > 0)
+            {
+                if (left[0] < right[0])
+                {
+                    results.Add(left[0]);
+                    left.RemoveAt(0);
+                }
+                else
+                {
+                    results.Add(right[0]);
+                    right.RemoveAt(0);
+                }
+            }
+
+            while (left.Count > 0)
+            {
+                results.Add(left[0]);
+                left.RemoveAt(0);
+            }
+
+            while (right.Count > 0)
+            {
+                results.Add(right[0]);
+                right.RemoveAt(0);
+            }
+
+            //why is this returning correctly here but not when I pass it back to the MergeSort function that calls it?
+
+            foreach (var result in results)
+            {
+                Console.WriteLine(result);
+            }
+
+            return results;
         }
     }
 }
-
-
-//based on : http://codereview.stackexchange.com/questions/30545/merge-sort-implementation
-// take in unordered array
-// divide it in 2 until there are n sets of 2 elements (an odd element can be in its own set)
-// take each set(n) and do a compare, swapping the values if necessary

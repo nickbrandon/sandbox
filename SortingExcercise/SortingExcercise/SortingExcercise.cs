@@ -57,10 +57,12 @@ namespace SortingExcercise
                 case 2:
                     var insertionSort = new InsertionSort();
                     insertionSort.Sort(ints);
+                    SaveValues(ints);
                     break;
                 case 3:
                     var mergeSort = new MergeSort();
                     mergeSort.Sort(ints);
+                    SaveValues(ints);
                     break;
                 case 4:
                     var selectionSort = new SelectionSort();

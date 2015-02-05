@@ -25,11 +25,6 @@ namespace SortingExcercise.Sorts
                 ints[j + 1] = value; //finally, assign value to the value of the int at position ints[j+1] 
             }
 
-
-            for (int i = 0; i < ints.Length; i++)
-            {
-                Console.WriteLine(ints[i]);
-            }
             return null;
 
         }
