@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace SortingExcercise.Sorts
 {
+    //currently not working for a passed in array with negative integers
 
     public class CountingSort : ISortingExcercise
     {
@@ -17,16 +18,16 @@ namespace SortingExcercise.Sorts
 
         private void CountingSorter(int[] ints)
         {
-            int[] counts = new int[ints.Max() + 1];  //create an array of ints called count that contains n items of 0 that is the length of the maximum integer in the array that is passed in
-            int[] output = new int[ints.Length]; // intialize an array of the same length as the input array
+            int[] counts = new int[ints.Max() + 1]; 
+            int[] output = new int[ints.Length]; 
+
 
             for (int i = 0; i < ints.Length; i++)  //
             {
-                counts[ints[i]]++; // the position in the count array of ints[i] 
+                counts[ints[i]]++;             
             }
 
-            int j = 0;  //initialize another counter
-
+            int j = 0;  
 
             for (int i = 0; i < counts.Length; i++)
             {
